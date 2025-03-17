@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Amazon</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .nav{
+            width: 100vw;
+            height: 80px;
+            background-color: rgb(9, 2, 109);
+            position: fixed;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-content: space-evenly;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+
+        }
+        .logo{
+           padding: 10px 10px 0 10px;
+           cursor: pointer;
+        }
+        .bhvr{
+            border: 1px solid rgb(9, 2, 109);
+            padding: 10px 10px 0 10px;
+            cursor: pointer;
+        }
+        .bhvr:hover{
+            border: 1px solid white;
+        }
+        .loc i {
+            color: white;
+            margin-right: 5px;
+        }
+        .input-group {
+            width: 400px;
+            height: 30px;
+            padding-left: 8px;
+            
+        }
+        .cart i{
+            color: white;
+            font-size: 30px;
+            padding: 10px 10px 0 10px;
+        }
+        .nav2{
+            height: 60px;
+            /* width: 100vw; */
+            background-color: rgb(34, 47, 62);
+            padding-top: 20px;
+            padding-left: 10px;
+            margin-top: 80px;
+        }
+        .nav2 i {
+            font-size: 14px;
+            margin-right: 5px;
+        }
+        .nav2 p {
+            font-size: 14px;
+        }
+        .nav2 img {
+            color: white;
+        }
+
+        .hvr {
+            border: 1px solid #1b2532;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .hvr:hover {
+            border: 1px solid white;
+        }
+
+
+
+
+
+
+
+        .main-section {
+            background-color: #e2e7e6;
+        }
+
+        .main {
+            min-height: 100vh;
+            background-color: blueviolet;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            bottom: 350px;
+            background: linear-gradient(to bottom, transparent, #e2e7e6, #e2e7e6, #e2e7e6, #e2e7e6, #e2e7e6, #e2e7e6, #e2e7e6, #e2e7e6);
+        }
+
+        .boxes {
+            display: grid;
+            grid-template-columns:  350px 350px 350px 350px;
+            grid-template-rows: 420px 420px 285px 285px 420px;
+            gap: 19px;
+        }
+
+        .box {
+            background-color: white;
+             padding: 14px 15px; 
+        }
+
+        .box1 {
+            grid-area: 1/1/2/2;
+        }
+        .box1 img {
+            width: 150px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .box1 p {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+
+        .box2 {
+            grid-area: 1/2/2/3;
+        }
+
+        .box2 img {
+            width: 150px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .box2 p {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .box3 {
+            grid-area: 1/3/2/4;
+        }
+
+        .box3 img {
+            width: 150px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .box3 p {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .box4 {
+            grid-area: 1/4/2/5;
+        }
+
+        .box4 img {
+            width: 150px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .box4 p {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .box5 {
+            grid-area: 2/1/3/2;
+            
+            cursor: pointer;
+        }
+        .box5 img {
+            width: 150px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .box5 p {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .box14{
+            grid-area: 2/2/3/3;
+        }
+        .box14 img {
+            width: 150px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .box14 p {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .box6 {
+            grid-area: 2/3/3/4;
+        }
+
+        .box6 img {
+            width: 150px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .box6 p{
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .box7 {
+            grid-area: 2/4/3/5;
+        }
+        .box7 img {
+            width: 150px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .box7 p{
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .box8 {
+            grid-area: 3/1/4/5;
+        }
+
+        .things {
+            overflow: scroll;
+        }
+
+        .box8 {
+            cursor: pointer;
+        }
+
+        .box9 {
+            grid-area: 4/1/5/5;
+        }
+
+        .box9 {
+            cursor: pointer;
+        }
+
+        .box10 {
+            grid-area: 5/1/6/2;
+        }
+
+        .box10 img {
+            width: 150px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .box10 p {
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .box11 {
+            grid-area: 5/2/6/3;
+        }
+
+        .box11 img {
+            width: 150px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .box11 p {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .box12 {
+            grid-area: 5/3/6/4;
+        }
+        .box12 img {
+            width: 150px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .box12 p {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .box13 {
+            grid-area: 5/4/6/5;
+        }
+
+        .box13 img {
+            width: 150px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .box13 p {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+
+        .box h5 {
+            font-weight: 700;
+        }
+
+        .img1 {
+            width: 100%;
+            margin-top: 15px;
+            margin-bottom: 70px;
+            cursor: pointer;
+        }
+
+        .img2 {
+            width: 100%;
+            margin-top: 15px;
+            margin-bottom: 45px;
+            cursor: pointer;
+        }
+
+        .see {
+            color: blue;
+            font-size: 13px;
+            margin-bottom: 120px;
+        }
+
+        .see:hover {
+            color: black;
+            cursor: pointer;
+        }
+
+        .car:hover {
+            cursor: pointer;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    
+<div class="nav">
+    <div class="logo">
+        <img src="amazon-logo.png" width="150px" class="bhvr">
+    </div>
+
+    <div class=" loc d-flex justify-content-center align-items-center bhvr">
+        <i class="fa-solid fa-location-dot fs-5"></i>
+        <div class="text-white d-flex flex-column justify-content-center align-items-start">
+            <span class="text-light">Deliver to Hyderabad 500083</span>
+            <b>Update location</b>
+        </div>
+
+    </div>
+
+    
+        <div class="input-group mb-3 input-group-lg">
+            <button class="btn bg-secondary  text-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">All</button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+            <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Search Amazon.in">
+            
+            <button class="btn bg-warning" type="button" id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i></button>
+            
+          </div>
+
+          <div class="dropdown bhvr">
+            <button class="btn text-white btn-lg dropdown-toggle fs-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              EN
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">English</a></li>
+              <li><a class="dropdown-item" href="#">Telugu</a></li>
+              <li><a class="dropdown-item" href="#">Hindi</a></li>
+            </ul>
+          </div>
+
+
+          <div class="text-light d-flex justify-content-center align-items-start flex-column bhvr">
+            <span>Hello,sign in</span>
+            <b>Account & Lists</b>
+          </div>
+
+
+          <div class="text-light d-flex justify-content-center align-items-start flex-column bhvr">
+            <span>Returns</span>
+            <b>& orders</b>
+          </div>
+
+          <div class="cart bhvr">
+            <i class="fas fa-shopping-cart"></i>
+            
+        </div>
+
+
+          
+    
+
+</div>
+<div class="nav2 d-flex w-100 justify-content-evenly align-items-center gap-3">
+    <p class="text-white hvr"><i class="fa-solid fa-bars"></i>All</p>
+    <p class="text-white hvr">Fresh</p>
+    <p class="text-white hvr">MX Player</p>
+    <p class="text-white hvr">Sell</p>
+    <p class="text-white hvr">Best Sellers</p>
+    <p class="text-white hvr">Todays's Deals</p>
+    <p class="text-white hvr">Mobiles</p>
+    <p class="text-white hvr">Prime</p>
+    <p class="text-white hvr">Customer Service</p>
+    <p class="text-white hvr">New releases</p>
+    <p class="text-white hvr">Electronics</p>
+    <p class="text-white hvr">Fashion</p>
+    
+</div>
+
+
+<div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="c1.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="c2.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="c3.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <!-- <span class="visually-hidden">Previous</span> -->
+    </button>
+    <button class="carousel-control-next fw-bold fs-1" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <!-- <span class="visually-hidden">Next</span> -->
+    </button>
+  </div>
+
+
+  <div class="main-section">
+    <div class="main w-100 p-3">
+        <div class="boxes">
+            <div class="box box1">
+                <h5>Appliances for your home |</h5>
+                <h5>Upto 55% off</h5>
+                <div class="d-flex justify-content-between align-items-center ">
+                    <div>
+                        <img src="b11.jpg" alt="">
+                        <p>Air conditioners</p>
+                    </div>
+                    <div>
+                        <img src="b12.jpg" alt="">
+                        <p>Refrigerators</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center  ">
+                    <div>
+                        <img src="b13.jpg" alt="">
+                        <p>Microwaves</p>
+                    </div>
+                    <div>
+                        <img src="b14.jpg" alt="">
+                        <p>Washing machine</p>
+                    </div>
+                </div>
+                <span class="see">See more</span>
+            </div>
+
+            <div class="box box2">
+                <h5>Revamp your home in style |</h5>
+                <h5>Upto 32% off</h5>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <img src="b21.jpg" alt="">
+                        <p>Cusion covers</p>
+                    </div>
+                    <div>
+                        <img src="b22.jpg" alt="">
+                        <p>Figurines ,vases</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between ">
+                    <div>
+                        <img src="b23.jpg" alt="">
+                        <p>Home storage</p>
+                    </div>
+                    <div>
+                        <img src="b24.jpg" alt="">
+                        <p>Lighting solutions</p>
+                    </div>
+                </div>
+                <span class="see">See more</span>
+            </div>
+
+            <div class="box box3">
+                <h5>Starting ₹149 |</h5>
+                <h5>Headphones</h5>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <img src="b31.jpg" alt="">
+                        <p>Starting 249 | boAt</p>
+                    </div>
+                    <div>
+                        <img src="b32.jpg" alt="">
+                        <p>Starting 349 | boult</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between ">
+                    <div>
+                        <img src="b33.jpg" alt="">
+                        <p>Starting 649 | Noise</p>
+                    </div>
+                    <div>
+                        <img src="b34.jpg" alt="">
+                        <p>Starting 149 | Zebronics</p>
+                    </div>
+                </div>
+                <span class="see">See more</span>
+            </div>
+
+            <div class="box box4">
+                <h5>Automotive essentials | Upto</h5>
+                <h5>60% off</h5>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <img src="b41.jpg" alt="">
+                        <p>Starting 249 | boAt</p>
+                    </div>
+                    <div>
+                        <img src="b42.jpg" alt="">
+                        <p>Starting 349 | boult</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between ">
+                    <div>
+                        <img src="b43.jpg" alt="">
+                        <p>Starting 649 | Noise</p>
+                    </div>
+                    <div>
+                        <img src="b44.jpg" alt="">
+                        <p>Starting 149 | Zebronics</p>
+                    </div>
+                </div>
+                <span class="see">See more</span>
+            </div>
+
+            <div class="box box5">
+                <h5>Revamp your home in style |</h5>
+                <h5>Upto 32% off</h5>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <img src="b21.jpg" alt="">
+                        <p>Cusion covers</p>
+                    </div>
+                    <div>
+                        <img src="b22.jpg" alt="">
+                        <p>Figurines ,vases</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between ">
+                    <div>
+                        <img src="b23.jpg" alt="">
+                        <p>Home storage</p>
+                    </div>
+                    <div>
+                        <img src="b24.jpg" alt="">
+                        <p>Lighting solutions</p>
+                    </div>
+                </div>
+                <span class="see">See more</span>
+            </div>
+
+            <div class="box box14">
+                <h5>Revamp your home in style |</h5>
+                <h5>Upto 32% off</h5>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <img src="b21.jpg" alt="">
+                        <p>Cusion covers</p>
+                    </div>
+                    <div>
+                        <img src="b22.jpg" alt="">
+                        <p>Figurines ,vases</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between ">
+                    <div>
+                        <img src="b23.jpg" alt="">
+                        <p>Home storage</p>
+                    </div>
+                    <div>
+                        <img src="b24.jpg" alt="">
+                        <p>Lighting solutions</p>
+                    </div>
+                </div>
+                <span class="see">See more</span>
+            </div>
+
+            <div class="box box6">
+                <h5>Automotive essentials | Upto</h5>
+                <h5>60% off</h5>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <img src="b41.jpg" alt="">
+                        <p>Starting 249 | boAt</p>
+                    </div>
+                    <div>
+                        <img src="b42.jpg" alt="">
+                        <p>Starting 349 | boult</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between ">
+                    <div>
+                        <img src="b43.jpg" alt="">
+                        <p>Starting 649 | Noise</p>
+                    </div>
+                    <div>
+                        <img src="b44.jpg" alt="">
+                        <p>Starting 149 | Zebronics</p>
+                    </div>
+                </div>
+                <span class="see">See more</span>
+            </div>
+           
+            <div class="box box7">
+                <h5>Automotive essentials | Upto</h5>
+                <h5>60% off</h5>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <img src="b41.jpg" alt="">
+                        <p>Starting 249 | boAt</p>
+                    </div>
+                    <div>
+                        <img src="b42.jpg" alt="">
+                        <p>Starting 349 | boult</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between ">
+                    <div>
+                        <img src="b43.jpg" alt="">
+                        <p>Starting 649 | Noise</p>
+                    </div>
+                    <div>
+                        <img src="b44.jpg" alt="">
+                        <p>Starting 149 | Zebronics</p>
+                    </div>
+                </div>
+                <span class="see">See more</span>
+            </div>
+            <div class="box box8">
+                <h5>Unique products for small business | Upto 50% off</h5>
+                <div class="w-100 things">
+                    <div class="d-flex gap-3">
+                        <img src="b81.jpg" alt="">
+                        <img src="b82.jpg" alt="">
+                        <img src="b83.jpg" alt="">
+                        <img src="b84.jpg" alt="">
+                        <img src="b85.jpg" alt="">
+                        <img src="b86.jpg" alt="">
+                        <img src="b87.jpg" alt="">
+                        <img src="b88.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box box9">
+                <h5>Unique products for small business | Upto 50% off</h5>
+                <div class="w-100 things">
+                    <div class="d-flex gap-3">
+                        <img src="b81.jpg" alt="">
+                        <img src="b82.jpg" alt="">
+                        <img src="b83.jpg" alt="">
+                        <img src="b84.jpg" alt="">
+                        <img src="b85.jpg" alt="">
+                        <img src="b86.jpg" alt="">
+                        <img src="b87.jpg" alt="">
+                        <img src="b88.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box box10">
+                <h5>Appliances for your home |</h5>
+                <h5>Upto 55% off</h5>
+                <div class="d-flex justify-content-between align-items-center ">
+                    <div>
+                        <img src="b11.jpg" alt="">
+                        <p>Air conditioners</p>
+                    </div>
+                    <div>
+                        <img src="b12.jpg" alt="">
+                        <p>Refrigerators</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center  ">
+                    <div>
+                        <img src="b13.jpg" alt="">
+                        <p>Microwaves</p>
+                    </div>
+                    <div>
+                        <img src="b14.jpg" alt="">
+                        <p>Washing machine</p>
+                    </div>
+                </div>
+                <span class="see">See more</span>
+            </div>
+
+            <div class="box box11">
+                <h5>Revamp your home in style |</h5>
+                <h5>Upto 32% off</h5>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <img src="b21.jpg" alt="">
+                        <p>Cusion covers</p>
+                    </div>
+                    <div>
+                        <img src="b22.jpg" alt="">
+                        <p>Figurines ,vases</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between ">
+                    <div>
+                        <img src="b23.jpg" alt="">
+                        <p>Home storage</p>
+                    </div>
+                    <div>
+                        <img src="b24.jpg" alt="">
+                        <p>Lighting solutions</p>
+                    </div>
+                </div>
+                <span class="see">See more</span>
+            </div>
+
+            <div class="box box12">
+                <h5>Starting ₹149 |</h5>
+                <h5>Headphones</h5>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <img src="b31.jpg" alt="">
+                        <p>Starting 249 | boAt</p>
+                    </div>
+                    <div>
+                        <img src="b32.jpg" alt="">
+                        <p>Starting 349 | boult</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between ">
+                    <div>
+                        <img src="b33.jpg" alt="">
+                        <p>Starting 649 | Noise</p>
+                    </div>
+                    <div>
+                        <img src="b34.jpg" alt="">
+                        <p>Starting 149 | Zebronics</p>
+                    </div>
+                </div>
+                <span class="see">See more</span>
+            </div>
+
+            <div class="box box13">
+                <h5>Automotive essentials | Upto</h5>
+                <h5>60% off</h5>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <img src="b41.jpg" alt="">
+                        <p>Starting 249 | boAt</p>
+                    </div>
+                    <div>
+                        <img src="b42.jpg" alt="">
+                        <p>Starting 349 | boult</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between ">
+                    <div>
+                        <img src="b43.jpg" alt="">
+                        <p>Starting 649 | Noise</p>
+                    </div>
+                    <div>
+                        <img src="b44.jpg" alt="">
+                        <p>Starting 149 | Zebronics</p>
+                    </div>
+                </div>
+                <span class="see">See more</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
